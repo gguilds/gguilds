@@ -97,7 +97,7 @@ def show_profile(username):
 @login_required
 def edit_profile():
     '''Редактирование профиля пользователя'''
-    form = EditProfileForm()
+    form = EditProfileForm(current_user.username)
     if form.validate_on_submit():
         current_user.username = form.username.data
         current_user.about_me = form.about_me.data
