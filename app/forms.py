@@ -58,3 +58,9 @@ class EditProfileForm(FlaskForm):
 class EmptyForm(FlaskForm):
     '''Пустая форма для кнопки'''
     submit = SubmitField('Submit')
+
+class PostForm(FlaskForm):
+    '''Форма для ввода поста'''
+    post = TextAreaField('Say something', validators=[
+        DataRequired(), Length(min=1, max=140)])
+    submit = SubmitField('Submit')
