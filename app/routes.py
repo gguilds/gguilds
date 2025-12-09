@@ -104,7 +104,7 @@ def show_profile(username):
     posts = db.paginate(query, page=page,
                         per_page=app.config['POSTS_PER_PAGE'],
                         error_out=False)
-    next_url = url_for('usshow_profileer', username=user.username, page=posts.next_num) \
+    next_url = url_for('show_profile', username=user.username, page=posts.next_num) \
         if posts.has_next else None
     prev_url = url_for('show_profile', username=user.username, page=posts.prev_num) \
         if posts.has_prev else None
